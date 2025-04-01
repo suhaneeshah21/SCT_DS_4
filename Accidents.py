@@ -33,4 +33,31 @@ plt.ylabel("Accident Count")
 plt.title("Accident Severity by Age Group")
 plt.legend(title="Severity")
 plt.xticks(rotation=45)
+
+
+sns.countplot(x='Light_conditions', hue='Accident_severity', data=df)
+plt.xlabel("Light conditions")
+plt.ylabel("Accident Count")
+plt.title("Accident Severity by Light conditions")
+plt.legend(title="Severity")
+plt.xticks(rotation=45)
+# plt.show()
+
+plt.figure(figsize=(10,6))
+heatmap_data = pd.crosstab(df['Road_surface_type'], df['Accident_severity'])
+sns.heatmap(heatmap_data, annot=True, cmap='coolwarm', fmt='d')
+plt.xlabel("Road surface type")
+plt.ylabel("Weather Conditions")
+plt.title("Heatmap of Accident Severity by Road surface type")
+# plt.show()
+
+plt.figure(figsize=(10,6))
+heatmap_data = pd.crosstab(df['Weather_conditions'], df['Accident_severity'])
+sns.heatmap(heatmap_data, annot=True, cmap='crest', fmt='d')
+plt.xlabel("Accident Severity")
+plt.ylabel("Weather Conditions")
+plt.title("Heatmap of Accident Severity by Weather Conditions")
+
+
 plt.show()
+
