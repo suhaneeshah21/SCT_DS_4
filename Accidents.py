@@ -5,7 +5,7 @@ import pandas as pd
 from geopy.geocoders import Nominatim
 import plotly.express as px
 import folium
-df=pd.read_csv("US_Accidents_March23.csv")
+df=pd.read_csv("US_Accidents_March23(filtered).csv")
 print(df.head())
 
 from geopy.geocoders import Nominatim
